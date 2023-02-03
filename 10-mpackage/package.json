@@ -1,0 +1,11 @@
+{
+    "name": "mytool",
+    "version": "1.0.0",
+    "main": "index.js",
+    "description": "这是一个简单介绍",
+    "keywords": [
+        "这是一个字符串",
+        "这也是一个字符串"
+    ],
+    "license": "ISC"
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS</title>
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <button id="GET">GET</button>
+    <button id="POST">POST</button>
+    <button id="DELETE">DELETE</button>
+    <button id="JSONP">JSONP-GET</button>
+
+    <script>
+        $(function () {
+            $('#GET').on('click', function () {
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://127.0.0.1:8080/get',
+                    data: {
+                        name: 'zs',
+                        age: 20
+                    },
+                    success: function (res) {
+                        console.log(res);
+                    }
+                })
+            })
+            $('#POST').on('click', function () {
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://127.0.0.1:8080/post',
+                    data: {
+                        name: 'ls',
+                        age: 99
+                    },
+                    success: function (res) {
+                        console.log(res);
+                    }
+                })
+            })
+            $('#DELETE').on('click', function () {
+                $.ajax({
+                    type: 'DELETE',
+                    url: 'http://127.0.0.1:8080/delete',
+                    success: function (res) {
+                        console.log(res);
+                    }
+                })
+            })
+            $('#JSONP').on('click', function () {
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://127.0.0.1:8080/jsonp',
+                    dataType: 'jsonp',
+                    success: function (res) {
+                        console.log(res);
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
